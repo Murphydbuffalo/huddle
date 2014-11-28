@@ -8,7 +8,6 @@ var favicon = require('serve-favicon');
 var logger = require('morgan');
 var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
-// var normalize = require('normalize-css');
 
 //Controllers/Routes
 var routes = require('./routes/index');
