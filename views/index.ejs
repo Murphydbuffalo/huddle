@@ -23,6 +23,12 @@
         $('#input').val('');
         return false;
       });
+
+      socket.on('message', function(message){
+        var line = $('<li>');
+        line.text(message);
+        $('#messages').append(line);
+      });
     </script>
   </body>
 </html>
