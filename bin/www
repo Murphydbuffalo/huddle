@@ -4,6 +4,16 @@ var app = require('../app');
 
 app.set('port', 3000);
 
-var server = app.listen(app.get('port'), function() {
+//HTTP server
+var server = require('http').Server(app);
+
+//Websockets interface
+var io = require('socket.io')(server);
+
+io.on('connection', function(socket){
+  console.log('Connection made.');
+});
+
+server.listen(app.get('port'), function() {
   debug('Express server listening on port ' + server.address().port);
 });

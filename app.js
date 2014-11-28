@@ -1,4 +1,8 @@
+//Web development framework 
 var express = require('express');
+var app = express();
+
+//Helpers
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -6,11 +10,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // var normalize = require('normalize-css');
 
+//Controllers/Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
-var app = express();
-var server = require('http').Server(app);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');

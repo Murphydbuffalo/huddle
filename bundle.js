@@ -1,6 +1,10 @@
 (function e(t,n,r){function s(o,u){if(!n[o]){if(!t[o]){var a=typeof require=="function"&&require;if(!u&&a)return a(o,!0);if(i)return i(o,!0);var f=new Error("Cannot find module '"+o+"'");throw f.code="MODULE_NOT_FOUND",f}var l=n[o]={exports:{}};t[o][0].call(l.exports,function(e){var n=t[o][1][e];return s(n?n:e)},l,l.exports,e,t,n,r)}return n[o].exports}var i=typeof require=="function"&&require;for(var o=0;o<r.length;o++)s(r[o]);return s})({1:[function(require,module,exports){
 (function (__dirname){
+//Web development framework 
 var express = require('express');
+var app = express();
+
+//Helpers
 var path = require('path');
 var favicon = require('serve-favicon');
 var logger = require('morgan');
@@ -8,11 +12,9 @@ var cookieParser = require('cookie-parser');
 var bodyParser = require('body-parser');
 // var normalize = require('normalize-css');
 
+//Controllers/Routes
 var routes = require('./routes/index');
 var users = require('./routes/users');
-
-var app = express();
-var server = require('http').Server(app);
 
 app.set('views', path.join(__dirname, 'views'));
 app.set('view engine', 'ejs');
@@ -62,7 +64,7 @@ app.use(function(err, req, res, next) {
 module.exports = app;
 
 }).call(this,"/")
-},{"./routes/index":101,"./routes/users":102,"body-parser":2,"cookie-parser":7,"express":14,"http":218,"morgan":79,"path":224,"serve-favicon":87}],2:[function(require,module,exports){
+},{"./routes/index":101,"./routes/users":102,"body-parser":2,"cookie-parser":7,"express":14,"morgan":79,"path":224,"serve-favicon":87}],2:[function(require,module,exports){
 (function (__dirname){
 /*!
  * body-parser
